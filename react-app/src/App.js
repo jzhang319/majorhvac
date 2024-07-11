@@ -20,10 +20,10 @@ function App() {
       <Navbar isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/login">
+          <Route path="/simon">
             <LoginFormPage />
           </Route>
-          
+
           <Route exact path="/">
             <Dashboard />
           </Route>
