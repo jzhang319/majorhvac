@@ -21,7 +21,7 @@ function RequestAppointmentButton({ classes }) {
     <div>
       <button
         onClick={handleClick}
-        className={`w-90 sm:w-full bg-yellow-400 rounded-lg text-2xl md:px-2 lg:px-2 px-10 h-20 ${classes} flex items-center justify-center text-center break-words`}
+        className={`w-90 sm:w-full bg-yellow-400 hover:bg-yellow-600 rounded-lg text-2xl md:px-2 lg:px-2 px-10 h-20 ${classes} flex items-center justify-center text-center break-words`}
       >
         {/* <img src="/images/email-icon.png" className="h-10 w-10 mr-2" alt="" /> */}
         Make an Appointment via Email

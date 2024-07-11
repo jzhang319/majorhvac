@@ -5,30 +5,30 @@ import RequestAppointmentButton from "../RequestAppointmentButton";
 function Dashboard() {
   return (
     <>
-      <div className="w-full h-1/2-screen flex flex-row sm:flex-col">
-        <div className="bg-blue-500 w-1/3 sm:w-full md:gap-2 lg:gap-0 text-white flex flex-col justify-center items-center">
-          <div className="px-25 sm:mt-5 sm:px-5 md:px-5 lg:px-10 sm:text-2xl md:text-2xl lg:text-4xl font-bold">
+      <div className="w-full h-1/2-screen flex flex-row sm:flex-col md:flex-col lg:flex-row">
+        <div className="bg-blue-500 w-1/3 sm:w-full py-10 md:w-full lg:w-1/3 lg:gap-0 text-white flex flex-col justify-center items-center">
+          <div className="px-25 sm:mt-5 sm:px-3 md:px-5 lg:px-10 sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center">
             AC Installation in
-          </div>
-          <div className="px-5 sm:px-25 text-5xl sm:text-2xl md:text-2xl lg:text-4xl mt-2 font-bold flex justify-center">
             Anne Arundel
           </div>
-          <div className="px-5 sm:px-25 text-5xl sm:text-2xl md:text-2xl lg:text-4xl mt-2 font-bold flex justify-center">
-            County &
+          <div className="px-5 sm:px-25 text-5xl sm:text-2xl md:text-3xl lg:text-4xl font-bold flex justify-center">
           </div>
-          <div className="px-5 sm:px-20 text-5xl sm:text-2xl md:text-2xl lg:text-4xl mt-2 font-bold flex justify-center">
+          <div className="px-5 sm:px-25 text-5xl sm:text-2xl md:text-3xl lg:text-4xl font-bold flex text-center">
+            County &
             Surrounding Areas
           </div>
-          <div className="text-2xl sm:text-lg md:text-lg lg:text-xl font-light mt-5">
+          <div className="px-5 sm:px-20 text-5xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 font-bold flex justify-center">
+          </div>
+          <div className="text-2xl sm:text-lg md:text-2xl lg:text-3xl font-light mt-5">
             For Installation and Repair
           </div>
-          <div className="text-base sm:text-xl mt-2">Call Us Today!</div>
-          <div className="text-lg sm:text-2xl md:text-2xl font-extrabold">
+          <div className="text-base sm:text-xl md:text-2xl lg:text-3xl mt-2">Call Us Today!</div>
+          <div className="text-lg sm:text-2xl md:text-3xl  font-extrabold">
             (301) 820 - 5182
           </div>
-          <RequestAppointmentButton classes="mt-5 text-black sm:mb-5 md:hidden lg:block sm:px-4 lg:px-5" />
+          <RequestAppointmentButton classes="mt-5 text-black sm:mb-5 sm:px-4 lg:px-2 lg:mx-4" />
         </div>
-        <div className="bg-yellow-200 w-2/3 sm:w-full">
+        <div className="bg-yellow-200 w-2/3 sm:w-full md:w-full lg:mt-0">
           {/* a wide ac picture */}
           <img
             src="/images/hvac.webp"
@@ -37,16 +37,16 @@ function Dashboard() {
           />
         </div>
       </div>
-      <div className="my-20 w-full grid grid-cols-3 gap-20 px-30 sm:px-10 sm:gap-5 sm:mt-100 sm:flex sm:flex-col md:gap-10 lg:gap-20">
+      <div className="my-20 w-full grid grid-cols-3 gap-20 px-30 sm:px-10 sm:gap-5 sm:mt-115 sm:flex sm:flex-col md:mt-180 md:gap-10 lg:gap-20 lg:mt-20">
         {/* <div></div> */}
         <div className="flex flex-col items-center">
           <div className="">
             <img
               src="/images/courteous-scheduling.png"
               alt="hvac3"
-              className="w-40 h-40 object-contain sm:ml-10 lg:ml-10"
+              className="w-40 h-40 object-contain ml-10"
             />
-            <p className="font-bold text-2xl mt-2">Courteous Scheduling</p>
+            <p className="font-bold text-2xl mt-2 text-center">Courteous Scheduling</p>
           </div>
           <div>
             <p className="text-center mt-2">
@@ -62,7 +62,7 @@ function Dashboard() {
               alt="hvac5"
               className="w-40 h-40 object-contain"
             />
-            <p className="font-bold text-2xl mt-2">Upfront Pricing</p>
+            <p className="font-bold text-2xl mt-2 text-center">Upfront Pricing</p>
           </div>
           <div>
             <p className="text-center mt-2">
@@ -79,7 +79,7 @@ function Dashboard() {
               alt="hvac4"
               className="w-40 h-40 object-contain"
             />
-            <p className="mt-2 font-bold text-2xl">Happy Customers</p>
+            <p className="mt-2 font-bold text-2xl text-center">Happy Customers</p>
           </div>
           <div>
             <p className="text-center mt-2">
