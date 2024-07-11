@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PictureComponent from "../PictureComponent";
 
 function RequestAppointmentButton({ classes }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,9 +19,12 @@ function RequestAppointmentButton({ classes }) {
 
   return (
     <div>
-      <button onClick={handleClick} className={`w-50 bg-yellow-400 rounded-lg text-2xl px-10 h-15 ${classes} flex items-center`}>
+      <button
+        onClick={handleClick}
+        className={`w-90 sm:w-full bg-yellow-400 rounded-lg text-2xl md:px-2 lg:px-2 px-10 h-20 ${classes} flex items-center justify-center text-center break-words`}
+      >
         {/* <img src="/images/email-icon.png" className="h-10 w-10 mr-2" alt="" /> */}
-        Request an Appointment via Email
+        Make an Appointment via Email
       </button>
 
       {isModalOpen && (
@@ -31,7 +33,10 @@ function RequestAppointmentButton({ classes }) {
             <h2 className="text-2xl mb-4">Request an Appointment</h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                <label
+                  className="block text-gray-700 text-sm font-bold mb-2"
+                  htmlFor="email"
+                >
                   Your Email
                 </label>
                 <input
@@ -45,7 +50,10 @@ function RequestAppointmentButton({ classes }) {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
+                <label
+                  className="block text-gray-700 text-sm font-bold mb-2"
+                  htmlFor="message"
+                >
                   Message
                 </label>
                 <textarea

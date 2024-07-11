@@ -1,22 +1,23 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import RequestAppointmentButton from "../RequestAppointmentButton";
-import PictureComponent from "../PictureComponent";
 
 function Navbar({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
   return (
-    <div className="w-full h-40 grid grid-cols-2 items-center">
-      <div className="ml-20">
-        <img src="/images/Major-logo.png" className="w-50 h-40" alt="logo" />
+    <div className="w-full h-40 grid grid-cols-2 items-center lg:px-20">
+      <div className="">
+        <img src="/images/Major-logo.png" className="w-50 h-35" alt="logo" />
       </div>
 
-      <div className="flex justify-end items-center space-x-4 p-4">
+      <div className="flex flex-row justify-end items-center space-x-4 p-4 ">
         <div className="flex flex-col text-center">
-          <div>Call Today!</div>
-          <div>(301) 820 - 5182</div>
+          <div className="font-thin text-xl sm:font-normal">Call Today!</div>
+          <div className="text-blue-700 font-bold">(301) 820 - 5182</div>
         </div>
-        <RequestAppointmentButton classes='mr-20' />
+        <div >
+          <RequestAppointmentButton classes="sm:hidden" />
+        </div>
       </div>
     </div>
   );
