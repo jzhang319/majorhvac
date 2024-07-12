@@ -17,6 +17,7 @@ module.exports = {
         35: "8.75rem",
         30: "7.5rem",
         40: "10rem",
+        45: "11.25rem",
         50: "12.5rem",
         "1/2-screen": "50vh",
       },
@@ -45,7 +46,7 @@ module.exports = {
         sm: { max: "767px" },
         // => @media (min-width: 320px and max-width: 767px) { ... }
 
-        md: { min: "768px"},
+        md: { min: "768px", max: "1024px"},
         // => @media (min-width: 768px and max-width: 1023px) { ... }
 
         lg: { min: "1025px" },
