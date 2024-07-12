@@ -15,7 +15,7 @@ function Footer() {
       </div>
       <div className="w-full py-2 bg-gray-800">
         <p className="text-white text-center py-2">
-          © 2021 Major HVAC. All rights reserved. / Digital Solution built by Modern Technology LLC
+          © 2017 Major HVAC. All rights reserved. / Digital Solution built by Modern Technology LLC
         </p>
       </div>
     </>

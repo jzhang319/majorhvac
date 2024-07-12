@@ -1,7 +1,9 @@
+
 // constants
 const SET_IMAGE = "image/SET_IMAGE";
 const REMOVE_IMAGE = "image/REMOVE_IMAGE";
 const UPDATE_IMAGE = "image/UPDATE_IMAGE";
+const GET_IMAGES = "image/GET_IMAGES";
 
 // action creators
 const setImage = (image) => ({
@@ -18,6 +20,11 @@ const updateImage = (image) => ({
   payload: image,
 });
 
+const getAllImages = (images) => ({
+  type: GET_IMAGES,
+  payload: images,
+});
+
 // thunks
 export const fetchImage = (id) => async (dispatch) => {
   const response = await fetch(`/api/images/${id}`, {
@@ -28,6 +35,18 @@ export const fetchImage = (id) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(setImage(data));
+  }
+};
+
+export const fetchAllImages = () => async (dispatch) => {
+  try {
+    const response = await fetch("/api/images");
+    if (response.ok) {
+      const data = await response.json();
+      dispatch(getAllImages(data));
+    }
+  } catch (error) {
+    console.error("Error:", error);
   }
 };
 
@@ -90,9 +109,8 @@ export const editImage = (id, imageData) => async (dispatch) => {
   }
 };
 
-
 // initial state
-const initialState = { image: null };
+const initialState = {};
 
 // reducer
 export default function imageReducer(state = initialState, action) {
@@ -103,6 +121,8 @@ export default function imageReducer(state = initialState, action) {
       return { image: null };
     case UPDATE_IMAGE:
       return { image: action.payload };
+    case GET_IMAGES:
+      return { ...state, ...action.payload };
     default:
       return state;
   }

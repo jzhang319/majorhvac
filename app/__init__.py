@@ -1,8 +1,8 @@
 import os
-from flask import Flask, render_template, request, session, redirect
+from flask import Flask, jsonify, render_template, request, session, redirect
 from flask_cors import CORS
 from flask_migrate import Migrate
-from flask_wtf.csrf import CSRFProtect, generate_csrf
+from flask_wtf.csrf import CSRFProtect, generate_csrf, CSRFError
 from flask_login import LoginManager
 from .models import db, User
 from .api.user_routes import user_routes
@@ -30,8 +30,9 @@ app.config.from_object(Config)
 app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(image_routes, url_prefix='/api/images')
+
 db.init_app(app)
-Migrate(app, db)
+migrate = Migrate(app, db)
 
 # Application Security
 CORS(app)
@@ -57,11 +58,13 @@ def inject_csrf_token(response):
         'csrf_token',
         generate_csrf(),
         secure=True if os.environ.get('FLASK_ENV') == 'production' else False,
-        samesite='Strict' if os.environ.get(
-            'FLASK_ENV') == 'production' else None,
+        samesite='Strict' if os.environ.get('FLASK_ENV') == 'production' else None,
         httponly=True)
     return response
 
+@app.route('/api/get_csrf_token')
+def get_csrf_token():
+    return jsonify({'csrf_token': generate_csrf()})
 
 @app.route("/api/docs")
 def api_help():
@@ -87,7 +90,12 @@ def react_root(path):
         return app.send_from_directory('public', 'favicon.ico')
     return app.send_static_file('index.html')
 
-
 @app.errorhandler(404)
 def not_found(e):
     return app.send_static_file('index.html')
+
+csrf = CSRFProtect(app)
+
+@app.errorhandler(CSRFError)
+def handle_csrf_error(e):
+    return render_template('csrf_error.html--------> ', reason=e.description), 400

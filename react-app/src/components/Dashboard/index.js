@@ -86,13 +86,14 @@ function Dashboard() {
           </div>
           <div>
             <p className="text-center mt-2">
-              With more than 1.3 million 5-star reviews and an average 4.9
-              rating, our customers are happy with our services.
+              {/* With more than 1.3 million 5-star reviews and an average 4.9
+              rating, our customers are happy with our services. */}
+              Have been providing excellent service since 2017, our customers are happy with our services.
             </p>
           </div>
         </div>
-        <PictureComponent />
       </div>
+        <PictureComponent />
       <Footer />
     </>
   );

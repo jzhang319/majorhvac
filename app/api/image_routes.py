@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from flask_login import login_required
+from flask_login import login_required, current_user
 from app.models import Image, db
 from app.forms.new_picture_form import NewPictureForm
 from werkzeug.utils import secure_filename
@@ -14,13 +14,13 @@ credentials = service_account.Credentials.from_service_account_file(key_path)
 
 
 @image_routes.route('/')
-@login_required
 def all_images():
     """
     Query for all images and returns them in a list of image dictionaries
     """
+
     images = Image.query.all()
-    return {'images': [image.to_dict() for image in images]}
+    return [image.to_dict() for image in images]
 
 
 @image_routes.route('/<int:id>')

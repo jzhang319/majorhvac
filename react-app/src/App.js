@@ -23,7 +23,7 @@ function App() {
       <Navbar isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/simon">
+          <Route path="/login">
             <LoginFormPage />
           </Route>
 
