@@ -19,11 +19,18 @@ function RequestAppointmentButton({ classes }) {
 
   return (
     <div>
+
+      {/* <img
+        src="/images/email-icon.png"
+        className="md:size-16 mr-2 sm:hidden md:block lg:hidden xl:hidden"
+        alt=""
+        onClick={handleClick}
+      /> */}
+
       <button
         onClick={handleClick}
-        className={`w-90 sm:w-full bg-yellow-400 hover:bg-yellow-600 rounded-lg text-2xl md:px-2 lg:px-2 px-10 h-20 ${classes} flex items-center justify-center text-center break-words`}
+        className={`w-90 sm:w-full bg-yellow-400 hover:bg-yellow-600 rounded-lg text-2xl md:px-2 lg:px-2 px-10 h-20 lg:flex xl:flex items-center justify-center text-center break-words ${classes}`}
       >
-        {/* <img src="/images/email-icon.png" className="h-10 w-10 mr-2" alt="" /> */}
         Make an Appointment via Email
       </button>
 
